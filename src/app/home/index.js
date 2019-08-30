@@ -8,6 +8,4 @@ class Home extends Component {
   }
 }
 
-console.log(Home, 'home');
-
 export default Home;

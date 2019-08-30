@@ -1,30 +1,20 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Loadable from 'react-loadable';
 import Cookie from 'js-cookie';
-import Loading from '@components/loading';
 
-const AsyncLogin = Loadable({
-  loader: () => import('@app/login'),
-  loading: Loading,
-  delay: 300,
-})
-
-const AsyncHome = Loadable({
-  loader: () => import('@app/home'),
-  loading: Loading,
-  delay: 300,
-})
+// import Loading from '@components/loading';
+import Login from '@app/login';
+import Home from '@app/home';
 
 class LayOutRoute extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() => (Cookie.get('SystemToken') ? <AsyncHome /> : <Redirect to="/login" />)} />
-        <Route exact path="/login" component={AsyncLogin} />
+        <Route exact path="/" render={() => (Cookie.get('SystemToken') ? <Home /> : <Redirect to="/login" />)} />
+        <Route exact path="/login" component={Login} />
         <Route
           path="/"
-          render={() => (Cookie.get('SystemToken') ? <AsyncHome /> : <Redirect to="/login" />)}
+          render={() => (Cookie.get('SystemToken') ? <Home /> : <Redirect to="/login" />)}
         />
       </Switch>
     );
