@@ -1,0 +1,22 @@
+@import '../../../assets/style/variable.less';
+
+.app-container {
+  &-box {
+    height: calc(100vh - @app-header);
+  }
+  .app-content {
+    &-box {
+      height: calc(100vh - @app-header - .5rem);
+      padding: @content-padding;
+      padding-bottom: 0;
+      overflow-y: auto;
+      background: fade(@primary-color, 7%);
+    }
+    &-main {
+      background-color: #fff;
+      padding: @content-padding;
+      min-height: calc(100% - .5rem);
+      box-shadow: 0 .01px .02px 0 fade(@primary-color, 10%);
+    }
+  }
+}

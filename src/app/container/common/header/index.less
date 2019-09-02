@@ -1,0 +1,49 @@
+@import '../../../../assets/css/variable.less';
+
+.header-wrapper {
+  height: @header-hight;
+  display: flex;
+  align-items: center;
+  .change-color-box {
+    margin-left: @content-padding;
+    display: inline-block;
+    background-color: burlywood;
+    .change-color {
+      width: 20px;
+      cursor: pointer;
+    }
+    .color-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999;
+    }
+    .sketch-picker {
+      position: fixed;
+      top: 50px;
+      right: 30px;
+      .flexbox-fix:nth-child(3) {
+        // background-color: #000;
+        > div {
+          > div {
+            // background-color: #000;
+            line-height: normal;
+            padding: 10px 0;
+          }
+        }
+        input {
+          width: 100% !important;
+          padding: 4px 10% 4px !important;
+          height: 20px;
+          text-align: center;
+        }
+        span {
+          height: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

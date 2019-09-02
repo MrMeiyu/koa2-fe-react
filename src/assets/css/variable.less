@@ -1,90 +1,89 @@
-@min-body-width: 1365px;
-@global-prefix: ~"common";
-@app-header: 80px;
-@app-sider: 200px;
-@app-sider-1440: 160px;
+@min-body-width: 13.65rem;
+@global-prefix: ~'common';
+@app-header: 0.8rem;
+@app-sider: 2rem;
+@app-sider-1440: 1.6rem;
 @app-bg: #edf6ff;
-@content-padding: 20px;
+@header-hight: .5rem;
+@content-padding: 0.2rem;
 @primary-color: #1f46e2;
 @text-color: fade(#000, 65%);
 @text-color-secondary: fade(#000, 45%);
 @input-placeholder-color: hsv(0, 0, 75%);
 @border-color-base: hsv(0, 0, 85%);
-@title-base: 16px;
+@title-base: 0.16rem;
 @font-base: 14px;
 @font-base-1440: 12px;
 @font-base-1680: 13px;
-@form-item-min-width: 160px;
+@form-item-min-width: 1.6rem;
 @form-label-color: rgba(0, 0, 0, 0.85);
 @box-shadow-base: #000;
-// @form-margin-left: 120px;
-// @contentTitleFontSize: 16px;
-// @baseRadius: 4px;
-@disable-color: rgba(0,0,0,.5); // 包括不可点击内容
+@disable-color: rgba(0, 0, 0, 0.5); // 包括不可点击内容
 @danger-color: red; // 删除按钮，危险操作按钮
 @tr-hover-bg: #eaf3ff; // 表格中单行移入的颜色
 .box-shadow {
-  box-shadow: 0 0 7px 3px hsla(223, 20%, 90%, 0.5);
-};
-.@{global-prefix}-detail{
+  box-shadow: 0 0 0.07rem 0.03rem hsla(223, 20%, 90%, 0.5);
+}
+.@{global-prefix}-detail {
   // .detail-items-box{
   //   margin-left: @content-padding;
   // }
-  .detail-item{
-    &>div{
-      min-height: 40px;
+  .detail-item {
+    & > div {
+      min-height: 0.4rem;
       // font-size: 14px;
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
     }
-    .detail-item-title{
+    .detail-item-title {
       // font-size: 14px;
       word-break: keep-all;
       font-weight: 500;
       color: @text-color;
       margin-right: @content-padding;
     }
-    .detail-item-content{
+    .detail-item-content {
       color: @text-color-secondary;
       flex: 1;
     }
   }
 }
-.@{global-prefix}-form-add{
-  .detail-list-box{
+.@{global-prefix}-form-add {
+  .detail-list-box {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    .detail-list{
+    .detail-list {
       flex: 1;
     }
   }
-  .ant-form{
-    width: 400px;
-    margin-left: 120px;
+  .ant-form {
+    width: 4rem;
+    margin-left: 1.2rem;
   }
 }
-.@{global-prefix}-form-submit{
+.@{global-prefix}-form-submit {
   position: static;
-  left: 308px;
-  width: calc(~"100% - 356px");
+  left: 3.08rem;
+  width: calc(~'100% - 3.56rem');
   bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0;
-  button+button{// 输入框侯后面的按钮间隔32px
+  padding: 0.6rem 0;
+  button + button {
+    // 输入框侯后面的按钮间隔32px
     margin-left: @content-padding;
   }
 }
-.@{global-prefix}-form-submit-box{
+.@{global-prefix}-form-submit-box {
   width: 100%;
-  height: 164px;
+  height: 1.64rem;
 }
-.@{global-prefix}-subtitle{
+.@{global-prefix}-subtitle {
   position: relative;
-  height: 18px;
+  height: 0.18rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -92,223 +91,235 @@
   color: @text-color;
   font-weight: 600;
   margin-bottom: @content-padding;
-  .extra{
+  .extra {
     font-size: 14px;
     margin-left: @content-padding * 2;
     color: @primary-color;
     cursor: pointer;
-    .desc{
+    .desc {
       cursor: default;
       color: @input-placeholder-color;
     }
   }
-  &:before{
+  &:before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
-    height: 18px;
-    width: 4px;
-    border-radius: 2px;
+    height: 0.18rem;
+    width: 0.04rem;
+    border-radius: 0.02rem;
     background-color: @primary-color;
   }
 }
 
-.@{global-prefix}-file-list{
-  &>div{
+.@{global-prefix}-file-list {
+  & > div {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     cursor: pointer;
-    padding: 0 6px;
-    max-width: 400px;
-    >a{
-      width: 60px;
+    padding: 0 0.06rem;
+    max-width: 4rem;
+    > a {
+      width: 0.6rem;
     }
-    >p{
+    > p {
       flex: 1;
       margin: 0;
     }
-    &:hover{
+    &:hover {
       background-color: fadeout(@primary-color, 80%);
     }
   }
 }
-.@{global-prefix}-img-list{
+.@{global-prefix}-img-list {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  >img{
-    width: 80px;
+  > img {
+    width: 0.8rem;
     margin: 0 @content-padding @content-padding 0;
   }
 }
 // 超出省略号
-.@{global-prefix}-overflow-dot{
+.@{global-prefix}-overflow-dot {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 /****************容器*****************/
-.@{global-prefix}-container,.@{global-prefix}-search-box {
-  &+.@{global-prefix}-container{
+.@{global-prefix}-container,
+.@{global-prefix}-search-box {
+  & + .@{global-prefix}-container {
     margin-top: @content-padding;
   }
 }
 /****************搜索*****************/
-.@{global-prefix}-search-box {// 条件搜索
+.@{global-prefix}-search-box {
+  // 条件搜索
   padding: 0 0 @content-padding 0;
-  >div, >span{ // 子内容，多少行
+  > div,
+  > span {
+    // 子内容，多少行
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
     margin-bottom: @content-padding;
-    .item-input{ // 输入框选项, 二个输入框间隔24px
+    .item-input {
+      // 输入框选项, 二个输入框间隔24px
       margin-right: @content-padding;
       // height: .4rem;
       display: inline-flex;
       justify-content: center;
       align-content: center;
       align-items: center;
-      .label{// 输入框label距离输入框8px
-        margin-right: 6px;
+      .label {
+        // 输入框label距离输入框8px
+        margin-right: 0.06rem;
         // font-size: 14px;
       }
-      .ant-input-group{
-        margin-left: -6px;
+      .ant-input-group {
+        margin-left: -0.06rem;
       }
     }
-    .item-desc{ // 简介
+    .item-desc {
+      // 简介
       font-size: 12px;
       color: @text-color;
     }
-    .item-btn { // 按钮选项，二个按钮间隔24px
+    .item-btn {
+      // 按钮选项，二个按钮间隔24px
       margin-right: @content-padding;
-      .ant-btn{
+      .ant-btn {
         // font-size: 14px;
-        .icon{
-          padding-right: 10px;
+        .icon {
+          padding-right: 0.1rem;
         }
       }
-      &.spread{
+      &.spread {
         cursor: pointer;
         color: @primary-color;
-        &:hover{
+        &:hover {
           color: lighten(@primary-color, 10%);
         }
       }
     }
-    .item-input+.item-btn{// 输入框侯后面的按钮间隔32px
+    .item-input + .item-btn {
+      // 输入框侯后面的按钮间隔32px
       margin-left: @content-padding;
     }
-    &:last-child{
+    &:last-child {
       margin: @content-padding 0 0;
     }
   }
-  .search-inputs{
+  .search-inputs {
     margin-bottom: 0;
     border-bottom: 1px solid fade(@primary-color, 20%);
-    .item-input,.item-btn{
+    .item-input,
+    .item-btn {
       margin-bottom: @content-padding;
     }
   }
 }
 /*************table action******************/
-.@{global-prefix}-table-action{
+.@{global-prefix}-table-action {
   display: flex;
   flex-wrap: nowrap;
-  >span{
+  > span {
     padding-right: @content-padding / 3;
     // font-size: 14px;
     cursor: pointer;
     color: @primary-color;
-    &.disabled{ // 不能点击
+    &.disabled {
+      // 不能点击
       color: @disable-color;
       pointer-events: none;
       cursor: not-allowed;
     }
-    &.del{ // 删除
+    &.del {
+      // 删除
       color: @danger-color;
     }
-    &:hover{
-      opacity: .7;
+    &:hover {
+      opacity: 0.7;
     }
   }
 }
-.@{global-prefix}-table-action-menu{
-  .ant-dropdown-menu-item{
+.@{global-prefix}-table-action-menu {
+  .ant-dropdown-menu-item {
     text-align: center;
   }
-  .del{
+  .del {
     color: @danger-color;
   }
 }
 
-.@{global-prefix}-clock{
+.@{global-prefix}-clock {
   flex: 1;
   text-align: right;
   margin-left: @content-padding;
 }
 
 // 弹窗
-.@{global-prefix}-modal{
-  .ant-modal-content{
-    border-radius: 4px;
-    .ant-modal-close-x{
+.@{global-prefix}-modal {
+  .ant-modal-content {
+    border-radius: 0.04rem;
+    .ant-modal-close-x {
       width: @content-padding * 2;
       height: @content-padding * 2;
       line-height: @content-padding * 2;
       // font-size: 14px;
       color: #fff;
     }
-    .ant-calendar-picker{
+    .ant-calendar-picker {
       width: 100%;
     }
-    .time-rangepicker-box{
+    .time-rangepicker-box {
       width: 100%;
       display: flex;
       align-items: center;
-      .ant-time-picker{
+      .ant-time-picker {
         flex: 1;
       }
-      .picker-text{
-        width: 40px;
+      .picker-text {
+        width: 0.4rem;
         text-align: center;
       }
     }
-    .ant-modal-footer{
+    .ant-modal-footer {
       border-top: none;
       padding-bottom: @content-padding * 2;
       padding-top: @content-padding;
-      .@{global-prefix}-modal-footer{
+      .@{global-prefix}-modal-footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        span{
+        span {
           font-size: @title-base;
         }
-        >span{
+        > span {
           color: @input-placeholder-color;
           padding: @content-padding / 3 @content-padding / 2;
           cursor: pointer;
-          &:hover{
-            opacity: .7;
+          &:hover {
+            opacity: 0.7;
           }
         }
       }
     }
-    .ant-modal-body{
-      padding: 35px 40px;
+    .ant-modal-body {
+      padding: 0.35rem 0.4rem;
       padding-bottom: 0;
     }
   }
-  .ant-modal-header{
+  .ant-modal-header {
     height: @content-padding * 2;
     padding: 0;
-    .ant-modal-title{
+    .ant-modal-title {
       height: @content-padding * 2;
       background-color: @primary-color;
       display: flex;
@@ -318,33 +329,33 @@
       font-size: @title-base;
     }
   }
-  .ant-modal-footer{
-    >div{
+  .ant-modal-footer {
+    > div {
       text-align: center;
-      button + button{
+      button + button {
         margin-left: @content-padding;
       }
     }
   }
 }
-.@{global-prefix}-active-word{
+.@{global-prefix}-active-word {
   color: @primary-color;
   cursor: pointer;
 }
 
-.@{global-prefix}-error-word{
+.@{global-prefix}-error-word {
   color: @danger-color;
 }
 
-.ele-disabled{
+.ele-disabled {
   display: inline-block;
   position: relative;
-  .ele-disabled-content{
+  .ele-disabled-content {
     display: inline-block;
     pointer-events: none;
-    opacity: .6;
+    opacity: 0.6;
   }
-  &:after{
+  &:after {
     content: '';
     cursor: not-allowed;
     position: absolute;
@@ -359,9 +370,9 @@
 }
 
 //表格导出
-.common-table-container{
-  .table-btn-box{
-    margin-top: -44px;
+.common-table-container {
+  .table-btn-box {
+    margin-top: -0.44rem;
     display: flex;
     align-items: center;
   }

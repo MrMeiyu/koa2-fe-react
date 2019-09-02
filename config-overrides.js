@@ -1,5 +1,6 @@
 const path = require('path');
 const { override, fixBabelImports, addLessLoader, addWebpackAlias, } = require('customize-cra');
+const AntdThemeConfig = require('./antd-theme-config.json');
 
 module.exports = override(
   fixBabelImports('import', {
@@ -9,7 +10,7 @@ module.exports = override(
     }),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: { '@primary-color': '#1DA57A' },
+    modifyVars: AntdThemeConfig,
   }),
   addWebpackAlias({
     '@api': path.resolve(__dirname, 'src/api'),
