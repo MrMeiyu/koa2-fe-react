@@ -1,15 +1,18 @@
 @import '../../../../assets/css/variable.less';
 
-.header-wrapper {
+.app-header {
   height: @header-hight;
+  line-height: normal;
   display: flex;
   align-items: center;
+  overflow: hidden;
   .change-color-box {
     margin-left: @content-padding;
     display: inline-block;
     background-color: burlywood;
     .change-color {
       width: 20px;
+      height: 20px;
       cursor: pointer;
     }
     .color-modal {
@@ -25,10 +28,8 @@
       top: 50px;
       right: 30px;
       .flexbox-fix:nth-child(3) {
-        // background-color: #000;
         > div {
           > div {
-            // background-color: #000;
             line-height: normal;
             padding: 10px 0;
           }

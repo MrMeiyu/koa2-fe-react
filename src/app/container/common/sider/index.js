@@ -23,6 +23,7 @@ class AppSider extends Component {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={['1']}
+          className="left-menu"
         >
           <Menu.Item key="1">
             <Icon type="user" />

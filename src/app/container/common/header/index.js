@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import { SketchPicker } from 'react-color';
-import { Icon, message, Layout, } from 'antd';
+import { Icon, message, Layout } from 'antd';
 import { loadScript } from '@utils/helpers';
-import ColorImgUrl from '@assets/img/主题.png';
 import './index.less';
 
-const { Header, } = Layout;
+const { Header } = Layout;
 
 const _colors = [
   '#1f46e2',
@@ -25,10 +24,10 @@ class AppHeader extends PureComponent {
   };
 
   show = e => {
-    this.setState({
-      displayColorPicker: true,
-    });
     if (e.target.className === 'change-color') {
+      this.setState({
+        displayColorPicker: true,
+      });
     }
   };
 
@@ -74,11 +73,19 @@ class AppHeader extends PureComponent {
 
   render() {
     const { sketchColor, displayColorPicker } = this.state;
+    console.log(sketchColor, 'sketchColor');
+    const _bgColor = localStorage.getItem('themeColor');
     return (
-      <Header className="header-wrapper">
+      <Header className="app-header">
         <div className="color-wrapper">
           <div className="change-color-box" onClick={this.show}>
-            <img className="change-color" src={ColorImgUrl} alt="" />
+            {/* <img className="change-color" src={ColorImgUrl} alt="" /> */}
+            <div
+              className="change-color"
+              style={{
+                backgroundColor: sketchColor || _bgColor,
+              }}
+            />
             {displayColorPicker ? (
               <div className="color-modal" onClick={this.hide}>
                 <SketchPicker

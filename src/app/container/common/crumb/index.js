@@ -1,15 +1,17 @@
-import React, { PureComponent, } from 'react';
+import React, { PureComponent } from 'react';
+import { Breadcrumb } from 'antd';
 
 import './index.less';
 
 class Crumb extends PureComponent {
   render() {
-    return (
-      <div className="crumb-wrapper">
-        Crumb
-      </div>
-    )
+    return <Breadcrumb className="app-crumb">
+      <Breadcrumb.Item>Home</Breadcrumb.Item>
+      <Breadcrumb.Item>List</Breadcrumb.Item>
+      <Breadcrumb.Item>App</Breadcrumb.Item>
+    </Breadcrumb>;
   }
+
 }
 
 export default Crumb;
