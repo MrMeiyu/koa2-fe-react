@@ -45,12 +45,8 @@ class Login extends Component {
       if (!err) {
         window.Post('/login', values).then(r => {
           if (r.code === 200) {
-            const { history, } = this.props;
-            console.log(r, 'rrrrr')
             Cookies.set('token', r.data.token)
-            history.push({
-              pathname: '/layout',
-            })
+            global.nav(this.props, '/layout')
           }
         }).catch((err) => {
           console.warn(err, 'err')

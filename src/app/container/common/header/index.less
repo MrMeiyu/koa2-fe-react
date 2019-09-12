@@ -5,9 +5,11 @@
   line-height: normal;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   overflow: hidden;
+  // 主题颜色的切换
   .change-color-box {
-    margin-left: @content-padding;
+    margin-right: @content-padding;
     display: inline-block;
     background-color: burlywood;
     .change-color {
@@ -45,6 +47,12 @@
           line-height: 20px;
         }
       }
+    }
+  }
+  // 头像
+  .avatar-wrapper {
+    .avatar {
+      vertical-align: middle;
     }
   }
 }
