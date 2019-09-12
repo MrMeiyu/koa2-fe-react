@@ -34,7 +34,7 @@ instance.interceptors.request.use(
       };
       return Promise.reject(cancelResponse);
     }
-    const token = Cookies.get('SystemToken');
+    const token = Cookies.get('token');
     if (token) {
       // eslint-disable-next-line
       config.headers.common.Authorization = token;
@@ -51,7 +51,7 @@ instance.interceptors.response.use(
   (response) => {
     const { data, } = response;
     if ([1001, 1004, 1100, ].includes(data.code)) {
-      Cookies.remove('SystemToken');
+      Cookies.remove('token');
       window.location.href = './#login';
       return Promise.reject(data);
     }
@@ -69,7 +69,7 @@ instance.interceptors.response.use(
     const { code, message: msg, error, } = err.response.data;
     let errorMsg = msg || error;
     if ([1001, 1004, 1100, ].includes(code)) {
-      Cookies.remove('SystemToken');
+      Cookies.remove('token');
       window.location.href = './#login';
       return Promise.reject(err.response.data);
     }
