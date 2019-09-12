@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import { Link, } from 'react-router-dom';
 
 import './index.less';
 
@@ -35,7 +36,7 @@ class AppSider extends Component {
           </Menu.Item>
           <Menu.Item key="3">
             <Icon type="upload" />
-            <span>nav 3</span>
+            <Link to="/video">Video</Link>
           </Menu.Item>
         </Menu>
       </Sider>

@@ -1,5 +1,5 @@
 const path = require('path');
-const { override, fixBabelImports, addLessLoader, addWebpackAlias, } = require('customize-cra');
+const { override, fixBabelImports, addLessLoader, addWebpackAlias, addDecoratorsLegacy, } = require('customize-cra');
 const AntdThemeConfig = require('./antd-theme-config.json');
 
 module.exports = override(
@@ -20,5 +20,6 @@ module.exports = override(
     '@route': path.resolve(__dirname, 'src/route'),
     '@store': path.resolve(__dirname, 'src/store'),
     '@utils': path.resolve(__dirname, 'src/utils'),
-  })
+  }),
+  addDecoratorsLegacy()
 );

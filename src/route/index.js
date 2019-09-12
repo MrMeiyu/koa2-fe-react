@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect, } from 'react-router-dom';
 import { loadScript } from '@utils/helpers';
-// import Cookie from 'js-cookie';
+import Cookie from 'js-cookie';
 
 // import Loading from '@components/loading';
 import Login from '@app/login';
 // import Home from '@app/home';
 import Layout from '@app/container/layout';
+// import VideoView from '@app/container/page/video-view';
 
 class LayOutRoute extends Component {
   componentDidMount() {
@@ -39,13 +40,8 @@ class LayOutRoute extends Component {
   render() {
     return (
       <Switch>
-        {/* <Route exact path="/" render={() => (Cookie.get('SystemToken') ? <Layout /> : <Redirect to="/login" />)} /> */}
-        <Route exact path="/" render={() => (<Layout />)} />
-        <Route exact path="/login" component={Login} />
-        <Route
-          path="/"
-          render={() => (<Layout />)}
-        />
+        <Route path="/login" component={Login} />
+        <Route path="/" render={() => (Cookie.get('token') ? <Layout /> : <Redirect to="/login" />)} />
       </Switch>
     );
   }

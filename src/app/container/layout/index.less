@@ -1,12 +1,12 @@
-@import '../../../assets/style/variable.less';
+@import '../../../assets/css/variable.less';
 
 .app-container {
   &-box {
-    height: calc(100vh - @app-header);
+    height: 100vh;
   }
   .app-content {
     &-box {
-      height: calc(100vh - @app-header - .5rem);
+      height: calc(100vh - @header-hight * 2);
       padding: @content-padding;
       padding-bottom: 0;
       overflow-y: auto;

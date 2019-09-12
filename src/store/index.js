@@ -2,7 +2,9 @@ import React from 'react';
 import { Provider } from 'mobx-react';
 
 export default ({ children, }) => (
-  <Provider>
+  <Provider
+    userState="1111"
+  >
     {children}
   </Provider>
 );

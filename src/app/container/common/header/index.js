@@ -73,7 +73,6 @@ class AppHeader extends PureComponent {
 
   render() {
     const { sketchColor, displayColorPicker } = this.state;
-    console.log(sketchColor, 'sketchColor');
     const _bgColor = localStorage.getItem('themeColor');
     return (
       <Header className="app-header">
